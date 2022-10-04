@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:projeto_hype/datas/product_data.dart';
 
@@ -11,6 +13,7 @@ class ProductTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var rng = Random();
     return GestureDetector(
         onTap: () {
           Navigator.of(ctx).push(
@@ -38,13 +41,13 @@ class ProductTile extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.star,color: Colors.amber,size: 14,),
-                        Icon(Icons.star,color: Colors.amber,size: 14,),
-                        Icon(Icons.star,color: Colors.amber,size: 14,),
-                        Icon(Icons.star,color: Colors.amber,size: 14,),
-                        Icon(Icons.star,color: Colors.amber,size: 14,),
-                        Text("(168)",style: TextStyle(color: Colors.black,fontSize: 9),)
+                      children: [
+                        const Icon(Icons.star,color: Colors.amber,size: 14,),
+                        const Icon(Icons.star,color: Colors.amber,size: 14,),
+                        const Icon(Icons.star,color: Colors.amber,size: 14,),
+                        const Icon(Icons.star,color: Colors.amber,size: 14,),
+                        const Icon(Icons.star,color: Colors.amber,size: 14,),
+                        Text(rng.nextInt(800).toString(),style:const TextStyle(color: Colors.black,fontSize: 9),)
                       ],
                     )
                   ],

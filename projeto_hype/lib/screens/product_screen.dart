@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:carousel_images/carousel_images.dart';
 import 'package:flutter/material.dart';
 import 'package:projeto_hype/datas/cart_product.dart';
@@ -19,6 +21,7 @@ class _ProductScreenState extends State<ProductScreen> {
   _ProductScreenState(this.productData);
   @override
   Widget build(BuildContext context) {
+    var rng = Random();
     return Scaffold(
       appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 28, 184, 145),
@@ -82,13 +85,13 @@ class _ProductScreenState extends State<ProductScreen> {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.start,
-                            children: const [
-                              Icon(Icons.star,color: Colors.amber,size: 18,),
-                              Icon(Icons.star,color: Colors.amber,size: 18,),
-                              Icon(Icons.star,color: Colors.amber,size: 18,),
-                              Icon(Icons.star,color: Colors.amber,size: 18,),
-                              Icon(Icons.star,color: Colors.amber,size: 18,),
-                              Text("(168)",style: TextStyle(color: Colors.black,fontSize: 11),)
+                            children:  [
+                              const Icon(Icons.star,color: Colors.amber,size: 18,),
+                              const Icon(Icons.star,color: Colors.amber,size: 18,),
+                              const Icon(Icons.star,color: Colors.amber,size: 18,),
+                              const Icon(Icons.star,color: Colors.amber,size: 18,),
+                              const Icon(Icons.star,color: Colors.amber,size: 18,),
+                              Text(rng.nextInt(800).toString(),style: TextStyle(color: Colors.black,fontSize: 11),)
                             ],
                           ),
                           const SizedBox(height: 10,),
@@ -101,12 +104,19 @@ class _ProductScreenState extends State<ProductScreen> {
                               style: const TextStyle(
                                   color: Color.fromARGB(255, 28, 184, 145),
                                   fontSize: 19,fontWeight: FontWeight.bold)),
-                          const SizedBox(height: 10,),
+                          const SizedBox(height: 20,),
+                          const Text(
+                           "Descrição:",
+                            style:  TextStyle(
+                                color: Colors.black,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold),
+                          ),
                           Text(productData.description),
                         ],
                       )),
                 ElevatedButton(
-                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 28, 184, 145)),),
+                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 28, 184, 145)),),
                     onPressed: () {
                       Cart().addCartItem(CartProduct(productData));
                       Navigator.of(context).push(MaterialPageRoute(
