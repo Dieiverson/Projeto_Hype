@@ -11,12 +11,12 @@ class Product {
   Product._internal();
 
   List<ProductData> _productList = [];
+  var url = Uri.http('dieiverson.ddns.net','/ecommerce/Produtos');
   Future<List<ProductData>> getProducts()
   async {
     if(_productList.isNotEmpty){
       return _productList;
     }
-    var url                   = Uri.http('192.168.15.54','/ecommerce/Produtos');
     var response              = await http.get(url);
     Map data  = jsonDecode(response.body);
     _productList = productsFromJson(data);
