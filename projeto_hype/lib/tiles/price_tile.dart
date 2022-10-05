@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/cart.dart';
+import '../screens/checkout_screen.dart';
 
 class PriceTile extends StatelessWidget {
   const PriceTile({Key? key}) : super(key: key);
@@ -29,6 +30,8 @@ class PriceTile extends StatelessWidget {
         const Divider(),
         ElevatedButton(
             onPressed: () {
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => const CheckoutScreen()));
             },
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(

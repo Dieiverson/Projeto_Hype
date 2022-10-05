@@ -21,19 +21,15 @@ class _CartScreenState extends State<CartScreen> {
     print(Cart().getTotal().toStringAsFixed(2));
     return Scaffold(
         appBar: AppBar(
-          title: Row(
-            children: [
-              Image.asset("images/logo_green.jpg", height: 55),
-              const Text("Ecommerce Hype")
-            ],
-          ),
+          centerTitle: true,
+          title: const Text("Carrinho"),
           backgroundColor: const Color.fromARGB(
-              255, 28, 184, 145), //const Color.fromARGB(255, 47, 62, 82) //
+              255, 28, 184, 145),
         ),
         body: ListView(children: [
           Column(
             children: List.generate(productList.length, (index) {
-              return CartTile(productList[index],refresh);
+              return CartTile(productList[index], refresh);
             }),
           ),
           PriceTile() //Não pode ser constante

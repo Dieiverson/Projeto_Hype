@@ -23,13 +23,13 @@ class ProductTile extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(5,10,5,10),
           child: Card(
               color: //const Color.fromARGB(100, 119, 120, 134),
-              Color.fromARGB(255, 242, 242, 242),
+              const Color.fromARGB(255, 242, 242, 242),
               child: Padding(
                 padding: const EdgeInsets.all(5),
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 5, bottom: 15),
+                      padding: const EdgeInsets.only(top: 5, bottom: 10),
                       child: Image.network(
                         productData.images[0],
                         fit: BoxFit.cover,
@@ -42,12 +42,12 @@ class ProductTile extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Icon(Icons.star,color: Colors.amber,size: 14,),
-                        const Icon(Icons.star,color: Colors.amber,size: 14,),
-                        const Icon(Icons.star,color: Colors.amber,size: 14,),
-                        const Icon(Icons.star,color: Colors.amber,size: 14,),
-                        const Icon(Icons.star,color: Colors.amber,size: 14,),
-                        Text(rng.nextInt(800).toString(),style:const TextStyle(color: Colors.black,fontSize: 9),)
+                        const Icon(Icons.star,color: Colors.amber,size: 13,),
+                        const Icon(Icons.star,color: Colors.amber,size: 13,),
+                        const Icon(Icons.star,color: Colors.amber,size: 13,),
+                        const Icon(Icons.star,color: Colors.amber,size: 13,),
+                        const Icon(Icons.star,color: Colors.amber,size: 13,),
+                        Text("(${rng.nextInt(800).toString()})",style:const TextStyle(color: Colors.black,fontSize: 9),)
                       ],
                     )
                   ],

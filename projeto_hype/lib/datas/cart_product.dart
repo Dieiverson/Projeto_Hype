@@ -7,4 +7,9 @@ class CartProduct {
   late int quantity;
   CartProduct(this.productData, {this.quantity = 1});
 
+  Map<String, dynamic> toJson() => {
+    'productData': productData.toJson(),
+    'quantity': quantity.toString(),
+  };
+
 }

@@ -1,44 +1,37 @@
 import 'package:flutter/material.dart';
-
 import '../screens/favorite_screen.dart';
 import '../screens/home_screen.dart';
 
 class SideDrawer extends StatelessWidget {
+  const SideDrawer({super.key});
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: Theme.of(context).copyWith(canvasColor: Colors.black),
+      data: Theme.of(context).copyWith(canvasColor: const Color.fromARGB(255, 28, 184, 145)),
       child: Drawer(
           child: SingleChildScrollView(child: Column(
             children: <Widget>[
               DrawerHeader(
                 decoration: const BoxDecoration(
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
                 child: Center(
                     child: Column(
                       children: [
-                        SizedBox(
-                          height: 100,
-                          width: 200,
-                          child: Image.asset("images/logo_hype.png"),
-                        ),
-                        const Text(
-                          "Hypando suas compras",
-                          style: TextStyle(
-                              color: Colors.red, fontWeight: FontWeight.bold),
-                        ),
+                        Image.asset("images/logo_hype.png",fit: BoxFit.cover,height: 130,),
                       ],
                     )),
               ),
+
+
               const Padding(
                 padding: EdgeInsets.only(right: 20, left: 20),
                 child: Divider(
-                  color: Colors.white,
+                  color: Color.fromARGB(255, 218, 218, 218),
                 ),
               ),
               ListTile(
-                tileColor: Colors.black.withOpacity(0.5),
+                tileColor:const Color.fromARGB(255, 28, 184, 145),
                 leading:const Icon(
                   Icons.home,
                   size: 30,
@@ -52,7 +45,7 @@ class SideDrawer extends StatelessWidget {
                       color: Colors.white),
                 ),
                 onTap: () => {
-                  Navigator.of(context).pushReplacement(
+                  Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => HomeScreen()))
                 },
               ),
@@ -63,7 +56,7 @@ class SideDrawer extends StatelessWidget {
                 ),
               ),
               ListTile(
-                tileColor: Colors.black.withOpacity(0.5),
+                tileColor: const Color.fromARGB(255, 28, 184, 145),
                 leading:const Icon(
                   Icons.favorite,
                   size: 30,
@@ -77,8 +70,8 @@ class SideDrawer extends StatelessWidget {
                       color: Colors.white),
                 ),
                 onTap: () => {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => FavoriteScreen()))
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const FavoriteScreen()))
                 },
               ),
               const Padding(
@@ -88,7 +81,7 @@ class SideDrawer extends StatelessWidget {
                 ),
               ),
               ListTile(
-                tileColor: Colors.black.withOpacity(0.5),
+                tileColor: const Color.fromARGB(255, 28, 184, 145),
                 leading:const Icon(
                   Icons.add_box,
                   size: 30,
@@ -104,7 +97,12 @@ class SideDrawer extends StatelessWidget {
                 onTap: () => {
 
                 },
-              )
+              ), const Padding(
+                padding: EdgeInsets.only(right: 20, left: 20),
+                child: Divider(
+                  color: Colors.white,
+                ),
+              ),
             ],
           ),)
 

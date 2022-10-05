@@ -28,7 +28,7 @@ class _ProductScreenState extends State<ProductScreen> {
           title: Row(
             children: [
               Image.asset("images/logo_green.jpg", height: 55),
-              const Text("Ecommerce Hype"),
+              const Text("Ecommerce Acme"),
             ],
           ),
           actions: [

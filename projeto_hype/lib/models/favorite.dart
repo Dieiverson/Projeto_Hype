@@ -21,4 +21,5 @@ class Favorite{
   {
     return _favs;
   }
+
 }

@@ -1,0 +1,11 @@
+{
+    "name": "dieiverson/hype",
+    "description": "API desenvolvida para vaga referente a desenvolvedor flutter da empresa hype",
+    "authors": [{
+        "name": "Dieiverson Kava",
+        "email": "38850216+Dieiverson@users.noreply.github.com"
+    }],
+    "require": {
+        "coffeecode/router": "1.0.8"
+    }
+}

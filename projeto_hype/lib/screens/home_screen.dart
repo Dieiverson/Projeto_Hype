@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_hype/tiles/product_tile.dart';
 import 'package:projeto_hype/tiles/side_drawer.dart';
+import '../delegates/data_search.dart';
 import '../models/product.dart';
 import 'cart_screen.dart';
 
@@ -22,11 +23,18 @@ class _HomeScreenState extends State<HomeScreen> {
             return Scaffold(
               appBar: AppBar(
                 title: Row(
-                  children: [
-                    Image.asset("images/logo_green.jpg",height: 55),
-                    const Text("Ecommerce Hype")
+                  children: const [
+                     Text("Acme - Produtos")
                   ],
                 ),
+                centerTitle: true,
+                actions: [
+                  IconButton(
+                      icon: const Icon(Icons.search),
+                      onPressed: () async {
+                        await showSearch(context: context, delegate: DataSearch());
+                      }),
+                ],
                 backgroundColor:const Color.fromARGB(255, 28, 184, 145), //const Color.fromARGB(255, 47, 62, 82) //
               ),
               drawer: SideDrawer(),
